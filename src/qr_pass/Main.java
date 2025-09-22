@@ -20,9 +20,15 @@ public class Main extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         redondo1 = new qr_pass.Redondo();
+        jLabel1 = new javax.swing.JLabel();
         redondo2 = new qr_pass.Redondo();
+        jLabel2 = new javax.swing.JLabel();
         redondo3 = new qr_pass.Redondo();
+        jLabel5 = new javax.swing.JLabel();
+        redondo5 = new qr_pass.Redondo();
+        jLabel7 = new javax.swing.JLabel();
         redondo4 = new qr_pass.Redondo();
+        jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -109,57 +115,157 @@ public class Main extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/037169f2-4df4-48b6-b4ee-1dbadfdbe24c-removebg-preview (2).png"))); // NOI18N
         content.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 170, 90));
 
+        redondo1.setBackground(new java.awt.Color(102, 0, 51));
+        redondo1.setToolTipText("");
+        redondo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Registro(evt);
+            }
+        });
+
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Registro");
+
         javax.swing.GroupLayout redondo1Layout = new javax.swing.GroupLayout(redondo1);
         redondo1.setLayout(redondo1Layout);
         redondo1Layout.setHorizontalGroup(
             redondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(redondo1Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jLabel1)
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         redondo1Layout.setVerticalGroup(
             redondo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(redondo1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        content.add(redondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 280, -1));
+        content.add(redondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 250, 60));
+
+        redondo2.setBackground(new java.awt.Color(102, 0, 51));
+        redondo2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                incidencias(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Incidencias");
 
         javax.swing.GroupLayout redondo2Layout = new javax.swing.GroupLayout(redondo2);
         redondo2.setLayout(redondo2Layout);
         redondo2Layout.setHorizontalGroup(
             redondo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(redondo2Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel2)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         redondo2Layout.setVerticalGroup(
             redondo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(redondo2Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel2)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        content.add(redondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+        content.add(redondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 250, 60));
+
+        redondo3.setBackground(new java.awt.Color(102, 0, 51));
+        redondo3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Busc(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Buscar alumno");
 
         javax.swing.GroupLayout redondo3Layout = new javax.swing.GroupLayout(redondo3);
         redondo3.setLayout(redondo3Layout);
         redondo3Layout.setHorizontalGroup(
             redondo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redondo3Layout.createSequentialGroup()
+                .addContainerGap(68, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(61, 61, 61))
         );
         redondo3Layout.setVerticalGroup(
             redondo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(redondo3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel5)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
-        content.add(redondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, -1, -1));
+        content.add(redondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 250, -1));
+
+        redondo5.setBackground(new java.awt.Color(102, 0, 51));
+        redondo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Down(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Descargar base de datos");
+
+        javax.swing.GroupLayout redondo5Layout = new javax.swing.GroupLayout(redondo5);
+        redondo5.setLayout(redondo5Layout);
+        redondo5Layout.setHorizontalGroup(
+            redondo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redondo5Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel7)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        redondo5Layout.setVerticalGroup(
+            redondo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redondo5Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        content.add(redondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 250, -1));
+
+        redondo4.setBackground(new java.awt.Color(102, 0, 51));
+        redondo4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bloq(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Bloquear credencial");
 
         javax.swing.GroupLayout redondo4Layout = new javax.swing.GroupLayout(redondo4);
         redondo4.setLayout(redondo4Layout);
         redondo4Layout.setHorizontalGroup(
             redondo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redondo4Layout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(39, 39, 39))
         );
         redondo4Layout.setVerticalGroup(
             redondo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(redondo4Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel6)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        content.add(redondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, -1, -1));
+        content.add(redondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 250, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,12 +289,6 @@ public class Main extends javax.swing.JFrame {
         regg.setVisible(true);
     }//GEN-LAST:event_Registro
 
-    private void incidencias(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incidencias
-        this.setVisible(false);
-        Incidencias inc = new Incidencias();
-        inc.setVisible(true);
-    }//GEN-LAST:event_incidencias
-
     private void Busc(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Busc
         this.setVisible(false);
         BuscarAlumno busc = new BuscarAlumno();
@@ -211,6 +311,12 @@ public class Main extends javax.swing.JFrame {
         DescargarBase down = new DescargarBase();
         down.setVisible(true);
     }//GEN-LAST:event_Down
+
+    private void incidencias(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incidencias
+        this.setVisible(false);
+        Incidencias inc = new Incidencias();
+        inc.setVisible(true);
+    }//GEN-LAST:event_incidencias
 
     public static void main(String args[]) {
         
@@ -246,8 +352,13 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel content;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -257,5 +368,6 @@ public class Main extends javax.swing.JFrame {
     private qr_pass.Redondo redondo2;
     private qr_pass.Redondo redondo3;
     private qr_pass.Redondo redondo4;
+    private qr_pass.Redondo redondo5;
     // End of variables declaration//GEN-END:variables
 }
