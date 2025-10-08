@@ -9,7 +9,7 @@ public class DataBaseConection {
     public static final String driver = "com.mysql.cj.jdbc.Driver";
     public static final String user = "root";
     public static final String pass = "Qeqrqt131415"; //pongan su contraseña
-    public static final String url = "jdbc:mysql://localhost:3306/prueba";
+    public static final String url = "jdbc:mysql://localhost:3306/Registro_Cecyt9";
 
     public Connection conectar() {
         con = null;

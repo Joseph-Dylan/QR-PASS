@@ -44,7 +44,7 @@ public class Incidencias extends javax.swing.JFrame {
     
     JMenuItem opcion3 = new JMenuItem("Reportar credencial");
     opcion3.addActionListener(e -> {
-        BloqCredencial1 panel = new BloqCredencial1();
+        BloqCredencial panel = new BloqCredencial();
         JFrame frame = new JFrame("Reportar credencial");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(panel);

@@ -49,7 +49,7 @@ public class Registro extends javax.swing.JFrame {
     
     JMenuItem opcion3 = new JMenuItem("Reportar credencial");
     opcion3.addActionListener(e -> {
-        BloqCredencial1 panel = new BloqCredencial1();
+        BloqCredencial panel = new BloqCredencial();
         JFrame frame = new JFrame("Reportar credencial");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(panel);
@@ -473,33 +473,33 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Enter(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Enter
-         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-    if (!Mex.isSelected() && !Mar.isSelected()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Error: Ninguna puerta seleccionada");
-        return;
-    }
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if (!Mex.isSelected() && !Mar.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: Ninguna puerta seleccionada");
+            return;
+            }
  
-    if (!Entrada.isSelected() && !Salida.isSelected()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Error: Sin tipo de registro seleccionado");
-        return;
-    }
+            if (!Entrada.isSelected() && !Salida.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Error: Sin tipo de registro seleccionado");
+            return;
+            }
 
-    String link = txt1.getText();
-    String[] partes = link.split("=");
+            String link = txt1.getText();
+            String[] partes = link.split("=");
 
-    if (partes.length <= 1) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Error: Formato de enlace inválido");
-        return;
-    }
+            if (partes.length <= 1) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: Formato de enlace inválido");
+                return;
+            }
 
-    String resultado = partes[1];
-    try {
-        int Boleta = Integer.parseInt(resultado);
-        Registro(Boleta);
-    } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e);
-    }
-}
+            String resultado = partes[1];
+            try {
+                int Boleta = Integer.parseInt(resultado);
+                Registro(Boleta);
+            } catch (NumberFormatException e) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e);
+            }
+        }
     }//GEN-LAST:event_Enter
 
     private void Entermanu(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Entermanu
@@ -541,15 +541,24 @@ public void Registro(int Boleta) {
         ResultSet rs = pst.executeQuery();
 
         if (rs.next()) {
-            Nombre.setText(rs.getString("Nombre"));
-            Grupo.setText(rs.getString("Grupo"));
+            Nombre.setText(rs.getString("nombre"));
+            Grupo.setText(rs.getString("grupo"));
+            String grupo = Grupo.getText();
             int u = rs.getInt("boleta");
             boleta.setText(String.valueOf(u));
-            int ret = rs.getInt("Retardos");
-            int sin = rs.getInt("Sin_credencial");
+            int ret = rs.getInt("retardos");
+            int sin = rs.getInt("sin_credencial");
+            boolean bloqueado = rs.getBoolean("bloqueado");
+            boolean puertaAbierta = rs.getBoolean("puerta_abierta");
             SinCred.setText(String.valueOf(sin));
+            
 
-            String grupo = Grupo.getText();
+            if (bloqueado) {
+                Registro.setText("Boleta bloqueada");
+                Circulo.setBackground(Color.red);
+                return;
+            }
+            
             LocalDateTime fechaHoraActual = LocalDateTime.now();
             LocalTime horaActual = fechaHoraActual.toLocalTime();
             DayOfWeek diaSemana = fechaHoraActual.getDayOfWeek();
@@ -587,7 +596,7 @@ public void Registro(int Boleta) {
                                     
                                     tipoRegistro = "Retardo";
                                 } catch (SQLException e) {
-                              
+                                    javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e);
                                 }
                         }
 
@@ -636,6 +645,7 @@ public void Registro(int Boleta) {
             limpiarTimer.start();
         }
     } catch (SQLException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Error: " + e);
     }
     }
     else{
@@ -755,6 +765,14 @@ public void RegistroMan(int Boleta) {
                 int ret = rs.getInt("Retardos");
                 int sin = rs.getInt("Sin_credencial");
                 int Tsin = sin + 1;
+                boolean bloqueado = rs.getBoolean("bloqueado");
+                boolean puertaAbierta = rs.getBoolean("puerta_abierta");
+                
+                if (bloqueado) {
+                    Registro.setText("Boleta bloqueada");
+                    Circulo.setBackground(Color.red);
+                    return;
+                }
 
                 if (Tsin < 4) {
                     String grupo = Grupo.getText();

@@ -229,10 +229,10 @@ public class Main extends javax.swing.JFrame {
         );
         redondo5Layout.setVerticalGroup(
             redondo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(redondo5Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, redondo5Layout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         content.add(redondo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 250, -1));
@@ -271,11 +271,15 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 230, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(content, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 280, Short.MAX_VALUE))
         );
 
         pack();
@@ -296,14 +300,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Busc
 
     private void Bloq(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bloq
-
-    content.removeAll();
-    BloqCredencial1 bloq = new BloqCredencial1();
-    content.add(bloq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, content.getWidth(), content.getHeight()));
-    content.revalidate();
-    content.repaint();
-
- 
+        this.setVisible(false);
+        BloqCredencial bloq = new BloqCredencial();
+        bloq.setVisible(true);
     }//GEN-LAST:event_Bloq
 
     private void Down(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Down
